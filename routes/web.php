@@ -2,6 +2,15 @@
 
 use App\Http\Controllers\Main\IndexController;
 use App\Http\Controllers\Admin\Main\IndexController as AdminIndexController;
+
+use App\Http\Controllers\Admin\Post\IndexController as AdminPostIndexController;
+use App\Http\Controllers\Admin\Post\CreateController as AdminPostCreateController;
+use App\Http\Controllers\Admin\Post\StoreController as AdminPostStoreController;
+use App\Http\Controllers\Admin\Post\ShowController as AdminPostShowController;
+use App\Http\Controllers\Admin\Post\EditController as AdminPostEditController;
+use App\Http\Controllers\Admin\Post\UpdateController as AdminPostUpdateController;
+use App\Http\Controllers\Admin\Post\DeleteController as AdminPostDeleteController;
+
 use App\Http\Controllers\Admin\Category\IndexController as AdminCategoryIndexController;
 use App\Http\Controllers\Admin\Category\CreateController as AdminCategoryCreateController;
 use App\Http\Controllers\Admin\Category\StoreController as AdminCategoryStoreController;
@@ -28,6 +37,17 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::group(['namespace' => 'Main'], function () {
         Route::get('/', [AdminIndexController::class, 'index']);
     });
+
+    Route::group(['namespace' => 'Post', 'prefix' => 'posts'], function () {
+        Route::get('/', [AdminPostIndexController::class, 'index'])->name('admin.post.index');
+        Route::get('/create', [AdminPostCreateController::class, 'index'])->name('admin.post.create');
+        Route::post('/', [AdminPostStoreController::class, 'index'])->name('admin.post.store');
+        Route::get('/{post}', [AdminPostShowController::class, 'index'])->name('admin.post.show');
+        Route::get('/{post}/edit', [AdminPostEditController::class, 'index'])->name('admin.post.edit');
+        Route::patch('/{post}', [AdminPostUpdateController::class, 'index'])->name('admin.post.update');
+        Route::delete('/{post}', [AdminPostDeleteController::class, 'index'])->name('admin.post.delete');
+    });
+
     Route::group(['namespace' => 'Category', 'prefix' => 'categories'], function () {
         Route::get('/', [AdminCategoryIndexController::class, 'index'])->name('admin.category.index');
         Route::get('/create', [AdminCategoryCreateController::class, 'index'])->name('admin.category.create');
