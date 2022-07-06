@@ -7,7 +7,7 @@ use App\Models\Category;
 
 class DeleteController extends Controller
 {
-    public function index(Category $category)
+    public function __invoke(Category $category)
     {
         $category->delete();
         return redirect()->route('admin.category.index');

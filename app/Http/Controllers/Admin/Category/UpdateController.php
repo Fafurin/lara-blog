@@ -8,7 +8,7 @@ use App\Models\Category;
 
 class UpdateController extends Controller
 {
-    public function index(UpdateRequest $request, Category $category)
+    public function __invoke(UpdateRequest $request, Category $category)
     {
         $data = $request->validated();
         $category->update($data);

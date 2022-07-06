@@ -7,7 +7,7 @@ use App\Models\Tag;
 
 class ShowController extends Controller
 {
-    public function index(Tag $tag)
+    public function __invoke(Tag $tag)
     {
         return view('admin.tag.show', compact('tag'));
     }

@@ -7,7 +7,7 @@ use App\Models\Tag;
 
 class DeleteController extends Controller
 {
-    public function index(Tag $tag)
+    public function __invoke(Tag $tag)
     {
         $tag->delete();
         return redirect()->route('admin.tag.index');

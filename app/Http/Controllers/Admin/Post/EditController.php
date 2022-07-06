@@ -8,7 +8,7 @@ use App\Models\Tag;
 
 class EditController extends BaseController
 {
-    public function index(Post $post)
+    public function __invoke(Post $post)
     {
         $categories = Category::all();
         $tags = Tag::all();

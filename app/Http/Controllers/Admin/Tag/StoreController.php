@@ -8,7 +8,7 @@ use App\Models\Tag;
 
 class StoreController extends Controller
 {
-    public function index(StoreRequest $request)
+    public function __invoke(StoreRequest $request)
     {
         $data = $request->validated();
         Tag::firstOrCreate($data);
