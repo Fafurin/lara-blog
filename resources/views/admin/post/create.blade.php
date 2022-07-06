@@ -69,7 +69,6 @@
                                 @enderror
                             </div>
                             <div class="form-group w-25">
-                                    <!-- select -->
                                     <div class="form-group">
                                         <label>Select category
                                             <select name="category_id" class="form-control">
