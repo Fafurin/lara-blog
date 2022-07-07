@@ -11,8 +11,9 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard v1</li>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.main.index') }}">Main</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.user.index') }}">Users</a></li>
+                            <li class="breadcrumb-item active">Create user</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -44,14 +45,6 @@
                                 <div class="text-danger">{{$message}}</div>
                                 @enderror
                             </div>
-{{--                            <div class="form-group">--}}
-{{--                                <label>Password--}}
-{{--                                    <input type="password" class="form-control" name="password" placeholder="Enter the user password">--}}
-{{--                                </label>--}}
-{{--                                @error('password')--}}
-{{--                                <div class="text-danger">{{$message}}</div>--}}
-{{--                                @enderror--}}
-{{--                            </div>--}}
                             <div class="form-group w-25">
                                 <div class="form-group">
                                     <label>Select role
