@@ -44,14 +44,14 @@
                                 <div class="text-danger">{{$message}}</div>
                                 @enderror
                             </div>
-                            <div class="form-group">
-                                <label>Password
-                                    <input type="password" class="form-control" name="password" placeholder="Enter the user password">
-                                </label>
-                                @error('password')
-                                <div class="text-danger">{{$message}}</div>
-                                @enderror
-                            </div>
+{{--                            <div class="form-group">--}}
+{{--                                <label>Password--}}
+{{--                                    <input type="password" class="form-control" name="password" placeholder="Enter the user password">--}}
+{{--                                </label>--}}
+{{--                                @error('password')--}}
+{{--                                <div class="text-danger">{{$message}}</div>--}}
+{{--                                @enderror--}}
+{{--                            </div>--}}
                             <div class="form-group w-25">
                                 <div class="form-group">
                                     <label>Select role
