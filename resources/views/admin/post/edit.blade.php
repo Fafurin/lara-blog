@@ -48,7 +48,8 @@
                             <div class="form-group w-25">
                                 <label >Preview image input
                                 <div class="w-25 mb-3">
-                                    <img src="{{asset('storage/' . $post->preview_image)}}" alt="preview_image" class="w-50">
+{{--                                    <img src="{{asset('storage/' . $post->preview_image)}}" alt="preview_image" class="w-50">--}}
+                                    <img src="{{asset($post->preview_image)}}" alt="preview_image" class="w-50">
                                 </div>
                                 <div class="input-group">
                                     <div class="custom-file">
@@ -64,7 +65,8 @@
                             <div class="form-group w-25">
                                 <label for="exampleInputFile">Main image input</label>
                                 <div class="w-24 mb-3">
-                                    <img src="{{asset('storage/' . $post->main_image)}}" alt="main_image" class="w-50">
+                                    <img src="{{asset($post->main_image)}}" alt="main_image" class="w-50">
+{{--                                    <img src="{{asset('storage/' . $post->main_image)}}" alt="main_image" class="w-50">--}}
                                 </div>
                                 <div class="input-group">
                                     <div class="custom-file">
