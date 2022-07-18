@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Edica :: Home</title>
+    <title>Blog</title>
     <link rel="stylesheet" href="{{ asset('assets/vendors/flag-icon-css/css/flag-icon.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/aos/aos.css') }}">
@@ -17,7 +17,14 @@
 <header class="edica-header">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="nav-link" href="{{route('main.index')}}">Blog</a>
+            <a class="nav-link" href="{{ route('main.index') }}">Main</a>
+            <a class="nav-link" href="{{ route('category.index') }}">Categories</a>
+            @auth()
+                <a class="nav-link" href="{{ route('personal.main.index') }}">Personal Account</a>
+            @endauth
+            @guest()
+                <a class="nav-link" href="{{ route('personal.main.index') }}">Log In</a>
+            @endguest
         </nav>
     </div>
 </header>
@@ -29,10 +36,15 @@
         <div class="footer-banner" data-aos="fade-up">
             <h1 class="banner-title">Download it now.</h1>
             <div class="banner-btns-wrapper">
-                <button class="btn btn-success"> <img src="{{asset('assets/images/apple@1x.svg')}}" alt="ios" class="mr-2"> App Store</button>
-                <button class="btn btn-success"> <img src="{{asset('assets/images/android@1x.svg')}}" alt="android" class="mr-2"> Google Play</button>
+                <button class="btn btn-success"><img src="{{asset('assets/images/apple@1x.svg')}}" alt="ios"
+                                                     class="mr-2"> App Store
+                </button>
+                <button class="btn btn-success"><img src="{{asset('assets/images/android@1x.svg')}}" alt="android"
+                                                     class="mr-2"> Google Play
+                </button>
             </div>
-            <p class="banner-text">Add some helper text here to explain the finer details of your <br> product or service.</p>
+            <p class="banner-text">Add some helper text here to explain the finer details of your <br> product or
+                service.</p>
         </div>
     </div>
 </section>
@@ -74,8 +86,10 @@
             </div>
             <div class="col-md-3">
                 <div class="dropdown footer-country-dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="footerCountryDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="flag-icon flag-icon-gb flag-icon-squared"></span> United Kingdom <i class="fas fa-chevron-down ml-2"></i>
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="footerCountryDropdown"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="flag-icon flag-icon-gb flag-icon-squared"></span> United Kingdom <i
+                            class="fas fa-chevron-down ml-2"></i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="footerCountryDropdown">
                         <button class="dropdown-item" href="#">
@@ -94,7 +108,9 @@
                 <a href="#!">Terms</a>
                 <a href="#!">Site Map</a>
             </nav>
-            <p class="mb-0">© Edica. 2020 <a href="https://www.bootstrapdash.com" target="_blank" rel="noopener noreferrer" class="text-reset">bootstrapdash</a> . All rights reserved.</p>
+            <p class="mb-0">© Edica. 2020 <a href="https://www.bootstrapdash.com" target="_blank"
+                                             rel="noopener noreferrer" class="text-reset">bootstrapdash</a> . All rights
+                reserved.</p>
         </div>
     </div>
 </footer>

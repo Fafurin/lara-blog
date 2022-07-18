@@ -8,10 +8,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
+    use SoftDeletes;
 
     protected $table = 'categories';
     protected $fillable = ['title'];
 
-
+    public function posts()
+    {
+        return $this->hasMany(Post::class, 'category_id', 'id');
+    }
 }

@@ -12,8 +12,8 @@ class PostUserLikeFactory extends Factory
     public function definition(): array
     {
         return [
-            'post_id' => $this->faker->numberBetween(46, 89),
-            'user_id' => $this->faker->numberBetween(15, 19),
+            'post_id' => $this->faker->numberBetween(94, 143),
+            'user_id' => $this->faker->numberBetween(22, 23),
             'created_at' => $this->faker->dateTime(),
             'updated_at' => $this->faker->dateTime(),
         ];

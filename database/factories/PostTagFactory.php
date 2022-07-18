@@ -12,7 +12,7 @@ class PostTagFactory extends Factory
     public function definition(): array
     {
         return [
-            'post_id' => $this->faker->numberBetween(46, 89),
+            'post_id' => $this->faker->numberBetween(94, 143),
             'tag_id' => $this->faker->numberBetween(33, 52),
             'created_at' => $this->faker->dateTime(),
             'updated_at' => $this->faker->dateTime(),
