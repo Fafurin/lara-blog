@@ -8,10 +8,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
+    use SoftDeletes;
 
     protected $table = 'posts';
     protected $fillable = ['title', 'content', 'category_id', 'preview_image', 'main_image'];
+
+    protected $withCount = ['likedUsers'];
 
     public function tags()
     {
@@ -26,5 +29,10 @@ class Post extends Model
     public function likedUsers()
     {
         return $this->belongsToMany(User::class, 'post_user_likes', 'post_id', 'user_id');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'post_id', 'id');
     }
 }
